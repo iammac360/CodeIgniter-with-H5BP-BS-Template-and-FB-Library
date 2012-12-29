@@ -1,39 +1,43 @@
-Facebook/Heroku sample app -- PHP
-=================================
+### A CodeIgniter skeleton application based on twitter bootstrap and html5boilerplate.
+---------------------------------------------------
 
-This is a sample app showing use of the Facebook Graph API, written in PHP, designed for deployment to [Heroku](http://www.heroku.com/).
+	VERSION 1.1.2
 
-Run locally
------------
+* Codeigniter 2.1.3
+* bootstrap 2.2.1
+* html5boilerplate 4.0.0
+* unique style css contains all bootstrap css (responsive and basic), and global css for custom styles.
+* unique plugin js contains all bootstrap plugins.
+* view rendering handled by a smart MY_Controller.
+* jQuery 1.8.2
+* underscore.js 1.3.3
+* nav_helper
+* .htacces tip for remove index.php
+* basejs view always include in page. (usefull to access via js some server side information e.g. base_url())
 
-Configure Apache with a `VirtualHost` that points to the location of this code checkout on your system.
+USAGE
+-------------------
+1. edit .htaccess file in order to match your server config (see line 5 in the file);
+	if you have http://localhost/site you nedd to set RewriteBase /site/
+2. set up yor defaults values in application/config/development/custom.php
+3. take a look to home controller and template view files to understand how does rendering works.
+4. create your template: i've set up an header, footer, nav, and main for example purpose. Skeleton.php contains the scaffolding page.
+5. pass your data to the view using in controller $this->data["my_var"] = "value";
 
-[Create an app on Facebook](https://developers.facebook.com/apps) and set the Website URL to your local VirtualHost.
+My_Controller
+------------------- 
+is made for my basic page template.
+You need to customize it in order to match your needs.
+Feel free to improve it.
+Send a pull request, or contact me.
 
-Copy the App ID and Secret from the Facebook app settings page into your `VirtualHost` config, something like:
+Author
+------------------- 
 
-    <VirtualHost *:80>
-        DocumentRoot /Users/adam/Sites/myapp
-        ServerName myapp.localhost
-        SetEnv FACEBOOK_APP_ID 12345
-        SetEnv FACEBOOK_SECRET abcde
-    </VirtualHost>
+####Alessandro Arnodo
 
-Restart Apache, and you should be able to visit your app at its local URL.
++	[@vesparny](https://twitter.com/vesparny)
 
-Deploy to Heroku via Facebook integration
------------------------------------------
++	[http://www.arnodo.net](http://www.arnodo.net)
 
-The easiest way to deploy is to create an app on Facebook and click Cloud Services -> Get Started, then choose PHP from the dropdown.  You can then `git clone` the resulting app from Heroku.
-
-Deploy to Heroku directly
--------------------------
-
-If you prefer to deploy yourself, push this code to a new Heroku app on the Cedar stack, then copy the App ID and Secret into your config vars:
-
-    heroku create --stack cedar
-    git push heroku master
-    heroku config:add FACEBOOK_APP_ID=12345 FACEBOOK_SECRET=abcde
-
-Enter the URL for your Heroku app into the Website URL section of the Facebook app settings page, hen you can visit your app on the web.
-
++	<mailto:alessandro@arnodo.net>
