@@ -38,10 +38,10 @@
 |
 */
 
-// $route['default_controller'] = "home";
-// $route['snake']	= "snake";
-$route['default_controller'] = "snake";
-$route['debug'] = "snake/debug";
+$route['default_controller'] = "home";
+$route['snake']	= "snake";
+// $route['default_controller'] = "snake";
+// $route['debug'] = "snake/debug";
 $route['test'] = "test";
 $route['404_override'] = '';
 
