@@ -64,7 +64,7 @@ $autoload['libraries'] = array('facebook');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url', 'utils');
 
 
 /*
@@ -80,7 +80,7 @@ $autoload['helper'] = array('url');
 |
 */
 
-$autoload['config'] = array("custom");
+$autoload['config'] = array('facebook', 'custom');
 
 
 /*

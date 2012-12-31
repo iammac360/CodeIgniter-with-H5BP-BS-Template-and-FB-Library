@@ -14,7 +14,12 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'https://floating-eyrie-3047.herokuapp.com/';
+
+// Production
+// $config['base_url']	= 'https://floating-eyrie-3047.herokuapp.com/';
+
+// Local Development
+$config['base_url']	= 'http://project1.mac/';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +229,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'yW38pxH211YsS31emw8Xp867WG94WN70';
 
 /*
 |--------------------------------------------------------------------------

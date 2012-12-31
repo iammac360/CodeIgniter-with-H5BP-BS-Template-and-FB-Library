@@ -39,6 +39,9 @@
 */
 
 $route['default_controller'] = "home";
+$route['snake']	= "snake";
+$route['snake/debug'] = "snake/debug";
+$route['test'] = "test";
 $route['404_override'] = '';
 
 

@@ -3,14 +3,21 @@
 class MY_Controller extends CI_Controller{
 	
 	//Page info
-	protected $data = Array();
+	protected $data = array();
 	protected $pageName = FALSE;
 	protected $template = "main";
 	protected $hasNav = TRUE;
+	protected $useHeader = TRUE;
+	protected $useBasejs = TRUE;
+	protected $useFBjs = FALSE;
+	
 	//Page contents
 	protected $javascript = array();
+	protected $jstmpl = array();
 	protected $css = array();
 	protected $fonts = array();
+	protected $debugData = array();
+
 	//Page Meta
 	protected $title = FALSE;
 	protected $description = FALSE;
@@ -19,7 +26,6 @@ class MY_Controller extends CI_Controller{
 	
 	function __construct()
 	{	
-
 		parent::__construct();
 		$this->data["uri_segment_1"] = $this->uri->segment(1);
 		$this->data["uri_segment_2"] = $this->uri->segment(2);
@@ -46,17 +52,36 @@ class MY_Controller extends CI_Controller{
 		
 		//data
 		$toBody["content_body"] = $this->load->view($view,array_merge($this->data,$toTpl),true);
+
+		if($this->useFBjs)
+		{
+			$toBody["fbinitjs"] = $this->load->view("template/fbinitjs", $this->data, true);
+		}
 		
 		//nav menu
-		if($this->hasNav){
+		if($this->hasNav) {
 			$this->load->helper("nav");
 			$toMenu["pageName"] = $this->pageName;
 			$toHeader["nav"] = $this->load->view("template/nav",$toMenu,true);
 		}
-		$toHeader["basejs"] = $this->load->view("template/basejs",$this->data,true);
 		
-		$toBody["header"] = $this->load->view("template/header",$toHeader,true);
+		if($this->useHeader)
+		{
+			if($this->useBasejs) $toHeader["basejs"] = $this->load->view("template/basejs",$this->data,true);
+			$toBody["header"] = $this->load->view("template/header",$toHeader,true);
+		}
+		else
+		{
+			if($this->useBasejs) $toBody["basejs"] = $this->load->view("template/basejs",$this->data,true);
+	
+			foreach($this->jstmpl as $js)
+			{
+				$toBody["jstmpl"] = $this->load->view($js,$this->data,true);
+			}
+		}
 		$toBody["footer"] = $this->load->view("template/footer",'',true);
+
+		$toBody["debugData"] = $this->load->view("pages/debug", $this->debugData, true);
 		
 		$toTpl["body"] = $this->load->view("template/".$this->template,$toBody,true);
 		

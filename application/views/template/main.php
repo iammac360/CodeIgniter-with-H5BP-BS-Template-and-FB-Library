@@ -1,6 +1,8 @@
-<?php echo $basejs?>
-<?php echo $header ?>
+<?php if(isset($fbinitjs)) echo $fbinitjs; ?>
+<?php if(isset($basejs)) echo $basejs; ?>
+<?php if(isset($jstmpl)) echo $jstmpl; ?>
+<?php if(isset($header)) echo $header; ?>
 <div id="main" role="main" class="row">
-	<?php echo $content_body ?>
+	<?php if(isset($content_body)) echo $content_body; ?>
 </div>
-<?php echo $footer ?>
+<?php if(isset($footer)) echo $footer; ?>

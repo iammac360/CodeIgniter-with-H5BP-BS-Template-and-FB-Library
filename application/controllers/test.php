@@ -1,8 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends MY_Controller {
+class Test extends CI_Controller {
 
 	private $user_id;
+	private $user_info;
 
 	public function __construct()
 	{
@@ -30,13 +31,10 @@ class Home extends MY_Controller {
 	
 	public function index(){	
 		
-		/*
-		 *set up title and keywords (if not the default in custom.php config file will be set) 
-		 */
-		$this->title = "Yaaaaa";
-		$this->keywords = "arny, arnodo";
-		
-		$this->_render('pages/home');
+		echo $this->user_id;
+		echo '<pre>';
+		print_r($this->user_info);
+		echo '</pre>';
 	}
 	
 }
