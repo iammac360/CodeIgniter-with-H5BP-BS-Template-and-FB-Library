@@ -16,8 +16,7 @@
 */
 
 // Production
-// $config['base_url']	= 'https://floating-eyrie-3047.herokuapp.com/';
-$config['base_url']	= 'http://www.demostage.tk/';
+$config['base_url']	= 'https://floating-eyrie-3047.herokuapp.com/';
 
 // Local Development
 // $config['base_url']	= 'http://project1.mac/';
