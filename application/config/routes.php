@@ -38,12 +38,12 @@
 |
 */
 
-$route['default_controller'] = "home";
-$route['snake']	= "snake";
-// $route['default_controller'] = "snake";
-$route['debug'] = "snake/debug";
-$route['test'] = "test";
-$route['404_override'] = '';
+$route['default_controller'] 	= "home";
+$route['code'] 					= "code/codeindex";
+$route['code/snakegame']		= "code/snakegame";
+$route['code/snakegame/debug'] 	= "code/snakegame/debug";
+$route['test'] 					= "test";
+$route['404_override'] 			= '';
 
 
 /* End of file routes.php */

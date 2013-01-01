@@ -16,11 +16,10 @@
 */
 
 // Production
-// $config['base_url']	= 'https://floating-eyrie-3047.herokuapp.com/';
-$config['base_url'] = 'http://www.mcsfeed.com/';
+// $config['base_url'] = 'http://www.mcsfeed.com/';
 
 // Local Development
-// $config['base_url']	= 'http://project1.mac/';
+$config['base_url']	= 'http://project1.mac/';
 
 /*
 |--------------------------------------------------------------------------

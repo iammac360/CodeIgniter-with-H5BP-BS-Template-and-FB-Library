@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Snake extends MY_Controller {
+class SnakeGame extends MY_Controller {
 
 	public $graph_url = "https://graph.facebook.com/";
 	private $app_id;
@@ -34,8 +34,6 @@ class Snake extends MY_Controller {
 				exit();
 			}
 		}
-
-		echo $this->facebook->getLoginURL();
 
 		// Fetch the basic info of the app that they are using
 		$this->app_info = $this->facebook->api('/'.$this->app_id);
